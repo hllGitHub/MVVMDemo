@@ -37,7 +37,7 @@ class ChildNameViewController: AddChildBaseViewController {
         textField.returnKeyType = .done
         textField.layer.borderColor = UIColor.orange.cgColor
         textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 20;
+        textField.layer.cornerRadius = 20
         textField.leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 8, height: 0))
         textField.leftViewMode = .always;
         return textField
@@ -48,8 +48,14 @@ class ChildNameViewController: AddChildBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector((dismissKeyboard)))
-        view.addGestureRecognizer(tapGestureRecognizer)
+        let tapGes = UITapGestureRecognizer()
+        tapGes.rx.event.subscribe(onNext: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            self.dismissKeyboard()
+        }).disposed(by: self.disposeBag)
+        view.addGestureRecognizer(tapGes)
         
         titleLabel.text = "Add Name"
         

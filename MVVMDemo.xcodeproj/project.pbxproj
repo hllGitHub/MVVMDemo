@@ -24,6 +24,9 @@
 		2346F97621BE54AE0001A02E /* UILabel+FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F97521BE54AE0001A02E /* UILabel+FontColor.swift */; };
 		2346F97821BE54E40001A02E /* ChildNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F97721BE54E40001A02E /* ChildNameViewController.swift */; };
 		2346F97C21BE56AE0001A02E /* ChildNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F97B21BE56AE0001A02E /* ChildNameTests.swift */; };
+		2346F97E21BE672E0001A02E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F97D21BE672E0001A02E /* LoginViewController.swift */; };
+		2346F98421BEAB430001A02E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F98321BEAB430001A02E /* LoginViewModel.swift */; };
+		2346F98621BEB3070001A02E /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F98521BEB3070001A02E /* LoginTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		2346F97521BE54AE0001A02E /* UILabel+FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+FontColor.swift"; sourceTree = "<group>"; };
 		2346F97721BE54E40001A02E /* ChildNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNameViewController.swift; sourceTree = "<group>"; };
 		2346F97B21BE56AE0001A02E /* ChildNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNameTests.swift; sourceTree = "<group>"; };
+		2346F97D21BE672E0001A02E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2346F98321BEAB430001A02E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2346F98521BEB3070001A02E /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,8 @@
 				2346F97121BE543A0001A02E /* ChildNameViewModel.swift */,
 				2346F97321BE54890001A02E /* AddChildBaseViewController.swift */,
 				2346F97721BE54E40001A02E /* ChildNameViewController.swift */,
+				2346F97D21BE672E0001A02E /* LoginViewController.swift */,
+				2346F98321BEAB430001A02E /* LoginViewModel.swift */,
 				2346F97521BE54AE0001A02E /* UILabel+FontColor.swift */,
 				2346F93A21BE519C0001A02E /* Main.storyboard */,
 				2346F93D21BE519E0001A02E /* Assets.xcassets */,
@@ -140,6 +148,7 @@
 			children = (
 				2346F94B21BE519E0001A02E /* MVVMDemoTests.swift */,
 				2346F97B21BE56AE0001A02E /* ChildNameTests.swift */,
+				2346F98521BEB3070001A02E /* LoginTests.swift */,
 				2346F94D21BE519E0001A02E /* Info.plist */,
 			);
 			path = MVVMDemoTests;
@@ -349,11 +358,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2346F97E21BE672E0001A02E /* LoginViewController.swift in Sources */,
 				2346F97421BE54890001A02E /* AddChildBaseViewController.swift in Sources */,
 				2346F97621BE54AE0001A02E /* UILabel+FontColor.swift in Sources */,
 				2346F97221BE543A0001A02E /* ChildNameViewModel.swift in Sources */,
 				2346F97821BE54E40001A02E /* ChildNameViewController.swift in Sources */,
 				2346F93721BE519C0001A02E /* AppDelegate.swift in Sources */,
+				2346F98421BEAB430001A02E /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2346F98621BEB3070001A02E /* LoginTests.swift in Sources */,
 				2346F94C21BE519E0001A02E /* MVVMDemoTests.swift in Sources */,
 				2346F97C21BE56AE0001A02E /* ChildNameTests.swift in Sources */,
 			);

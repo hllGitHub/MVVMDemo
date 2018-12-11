@@ -30,10 +30,9 @@ class ChildNameTests: XCTestCase {
         let canSendObserver = scheduler.createObserver(Bool.self)
         
         // 创建热信号，next在某个时间点，发送了某个信号
-        let inputUsernameObservable = scheduler.createHotObservable([next(100, ("hel")),
-                                                                     next(200, ("hello")),
-                                                                     next(300, ("helloworld")),
-                                                                     completed(500)])
+        let inputUsernameObservable = scheduler.createHotObservable([next(0, ("hel899")),
+                                                                     next(2, ("hello")),
+                                                                     next(3, ("helloworld"))])
         
         // 初始化，并且绑定数据源
         let viewModel = ChildNameViewModel(username: inputUsernameObservable.asObservable())
@@ -44,10 +43,9 @@ class ChildNameTests: XCTestCase {
         
         // 测试信号事件
         let expectedCanSendEvents = [
-            next(100, false),
-            next(200, false),
-            next(300, true),
-            completed(500)
+            next(0, true),
+            next(2, false),
+            next(3, true)
             ]
         
         // 测试

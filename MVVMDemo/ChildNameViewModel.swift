@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ChildNameViewModel {
+    // Input
     let validatedUsername: Observable<Bool>
     
     // Output
@@ -18,16 +19,17 @@ class ChildNameViewModel {
     
     // 如果Observable众多，不止一个，这里可以采用input的方式来管理
     init(username: Observable<String>) {
-        validatedUsername = username.flatMapLatest { username in
-            return Observable.create { observer in
-                let validUsername = username.count > 5  // 简化测试
-                
-                observer.onNext(validUsername)
-                observer.onCompleted()
-                return Disposables.create()
-            }
-            }.share(replay: 1, scope: .forever)
-        
+//        validatedUsername = username.flatMapLatest { username in
+//            return Observable.create { observer in
+//                let validUsername = username.count > 5  // 简化测试
+//
+//                observer.onNext(validUsername)
+//                observer.onCompleted()
+//                return Disposables.create()
+//            }
+//            }.share(replay: 1, scope: .forever)
+        // 简化写法
+        validatedUsername = username.share(replay: 1, scope: .forever).map({ $0.count > 5 })
         canAddEnabled = validatedUsername
     }
 }

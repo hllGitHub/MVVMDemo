@@ -49,11 +49,46 @@ class MVVMDemoTests: XCTestCase {
         XCTAssertEqual(res.events, correctMessages)
         XCTAssertEqual(xs.subscriptions, correctSuscriptions)
     }
+  
+  
     
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+      // 设置初始变量
+      let a = 10
+      let b = 15
+      let expected = 25
+      
+      // 得到实际值
+      let actual = self.add(a: a, b: b)
+      
+      // 断言判断
+      XCTAssertEqual(expected, actual, "add方法错误")
     }
+  
+  func testAsynExample() {
+    let exp: XCTestExpectation = self.expectation(description: "错误信息")
+    
+    let queue: OperationQueue = OperationQueue.init()
+    queue .addOperation {
+      // 模拟异步操作，耗时2s
+      sleep(2)
+      XCTAssertEqual("a", "a")
+      exp.fulfill()
+    }
+    
+    self.waitForExpectations(timeout: 3) { (error) in
+      if (error != nil) {
+        print("Timeout Error: \(String(describing: error))")
+      }
+    }
+  }
+  
+  func add(a: Int, b: Int) -> Int {
+    return a + b
+  }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

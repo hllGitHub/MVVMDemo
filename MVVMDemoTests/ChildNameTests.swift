@@ -50,7 +50,6 @@ class ChildNameTests: XCTestCase {
         
         // 测试
         XCTAssertEqual(canSendObserver.events, expectedCanSendEvents)
-        
     }
     
     override func setUp() {

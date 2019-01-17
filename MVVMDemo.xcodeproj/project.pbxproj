@@ -27,6 +27,11 @@
 		2346F97E21BE672E0001A02E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F97D21BE672E0001A02E /* LoginViewController.swift */; };
 		2346F98421BEAB430001A02E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F98321BEAB430001A02E /* LoginViewModel.swift */; };
 		2346F98621BEB3070001A02E /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346F98521BEB3070001A02E /* LoginTests.swift */; };
+		23485E2421EEE25900B1E7F7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23485E2321EEE25900B1E7F7 /* NetworkManager.swift */; };
+		23FBF7B321D0CF07005E5999 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBF7B221D0CF07005E5999 /* Protocols.swift */; };
+		23FBF7B521D0D00F005E5999 /* ServiceImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBF7B421D0D00F005E5999 /* ServiceImplement.swift */; };
+		23FBF7B821D0F52A005E5999 /* MockUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBF7B721D0F52A005E5999 /* MockUserAPI.swift */; };
+		23FBF7BA21D0F6D7005E5999 /* NotImplementedStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBF7B921D0F6D7005E5999 /* NotImplementedStubs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		2346F97D21BE672E0001A02E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2346F98321BEAB430001A02E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2346F98521BEB3070001A02E /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		23485E2321EEE25900B1E7F7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		23FBF7B221D0CF07005E5999 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		23FBF7B421D0D00F005E5999 /* ServiceImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceImplement.swift; sourceTree = "<group>"; };
+		23FBF7B721D0F52A005E5999 /* MockUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAPI.swift; sourceTree = "<group>"; };
+		23FBF7B921D0F6D7005E5999 /* NotImplementedStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotImplementedStubs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,9 @@
 				2346F97D21BE672E0001A02E /* LoginViewController.swift */,
 				2346F98321BEAB430001A02E /* LoginViewModel.swift */,
 				2346F97521BE54AE0001A02E /* UILabel+FontColor.swift */,
+				23FBF7B221D0CF07005E5999 /* Protocols.swift */,
+				23485E2321EEE25900B1E7F7 /* NetworkManager.swift */,
+				23FBF7B421D0D00F005E5999 /* ServiceImplement.swift */,
 				2346F93A21BE519C0001A02E /* Main.storyboard */,
 				2346F93D21BE519E0001A02E /* Assets.xcassets */,
 				2346F93F21BE519E0001A02E /* LaunchScreen.storyboard */,
@@ -146,6 +159,7 @@
 		2346F94A21BE519E0001A02E /* MVVMDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				23FBF7B621D0F50B005E5999 /* Mocks */,
 				2346F94B21BE519E0001A02E /* MVVMDemoTests.swift */,
 				2346F97B21BE56AE0001A02E /* ChildNameTests.swift */,
 				2346F98521BEB3070001A02E /* LoginTests.swift */,
@@ -172,6 +186,15 @@
 				2346F96721BE53460001A02E /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23FBF7B621D0F50B005E5999 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				23FBF7B721D0F52A005E5999 /* MockUserAPI.swift */,
+				23FBF7B921D0F6D7005E5999 /* NotImplementedStubs.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,11 +383,14 @@
 			files = (
 				2346F97E21BE672E0001A02E /* LoginViewController.swift in Sources */,
 				2346F97421BE54890001A02E /* AddChildBaseViewController.swift in Sources */,
+				23485E2421EEE25900B1E7F7 /* NetworkManager.swift in Sources */,
 				2346F97621BE54AE0001A02E /* UILabel+FontColor.swift in Sources */,
+				23FBF7B521D0D00F005E5999 /* ServiceImplement.swift in Sources */,
 				2346F97221BE543A0001A02E /* ChildNameViewModel.swift in Sources */,
 				2346F97821BE54E40001A02E /* ChildNameViewController.swift in Sources */,
 				2346F93721BE519C0001A02E /* AppDelegate.swift in Sources */,
 				2346F98421BEAB430001A02E /* LoginViewModel.swift in Sources */,
+				23FBF7B321D0CF07005E5999 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +401,8 @@
 				2346F98621BEB3070001A02E /* LoginTests.swift in Sources */,
 				2346F94C21BE519E0001A02E /* MVVMDemoTests.swift in Sources */,
 				2346F97C21BE56AE0001A02E /* ChildNameTests.swift in Sources */,
+				23FBF7B821D0F52A005E5999 /* MockUserAPI.swift in Sources */,
+				23FBF7BA21D0F6D7005E5999 /* NotImplementedStubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

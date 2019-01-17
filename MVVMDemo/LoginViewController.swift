@@ -13,6 +13,8 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import struct Foundation.URL
+import struct Foundation.URLRequest
 
 fileprivate let minimalUsernameLength = 5
 fileprivate let minimalPasswordLength = 5
@@ -79,6 +81,7 @@ class LoginViewController: UIViewController {
 
         setupSubviews()
         bindingData()
+      loginIn(username: "13262851829", password: "111111")
         
         view.setNeedsUpdateConstraints()
     }
@@ -91,12 +94,10 @@ class LoginViewController: UIViewController {
     }
     
     func bindingData() {
-        let usernameObservable = usernameField.rx.text.orEmpty.asObservable()
-        let passwordObservable = passwordField.rx.text.orEmpty.asObservable()
+      let usernameObservable = usernameField.rx.text.orEmpty.asObservable()
+      let passwordObservable = passwordField.rx.text.orEmpty.asObservable()
         
-        let viewModel = LoginViewModel(
-            input: (username: usernameObservable, password: passwordObservable)
-        )
+      let viewModel = LoginViewModel(input: (username: usernameObservable, password: passwordObservable, loginTaps: loginButton.rx.tap.asObservable()), dependency: (API:UserDefaultAPI.sharedAPI, validationService: ValidationService.sharedValidationService))
         
         // 订阅信号
         viewModel.logInEnabled.subscribe(onNext: { [weak self] valid in
@@ -107,14 +108,9 @@ class LoginViewController: UIViewController {
             self.loginButton.alpha = valid ? 1.0 : 0.5
         }).disposed(by: self.disposeBag)
         
-        loginButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let self = self else {
-                return
-            }
-            
-            sleep(2)
-            self.showAlert()
-        }).disposed(by: self.disposeBag)
+      viewModel.signedIn.subscribe(onNext: { signedIn in
+        print(signedIn)
+      }).disposed(by: disposeBag)
     }
     
     func showAlert() {
@@ -122,6 +118,43 @@ class LoginViewController: UIViewController {
         alertController.addAction(UIAlertAction.init(title: "好的", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+  
+  func loginIn(username: String, password: String) {
+    
+    let url = URL(string: "http://api.staging.kangyu.co/v3/session/")!
+    let parameters = ["phone" : username, "password" : password, "locale" : "zh-CN", "city_id" : "4133"]
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+    
+    do {
+      request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error  in
+      guard error == nil else {
+        print("error = \(String(describing: error))")
+        return
+      }
+      
+      guard let data = data else {
+        return
+      }
+      
+      print("data = \(data)")
+      
+      do {
+        if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] {
+          print("json = \(json)")
+        }
+      } catch let error {
+        print(error.localizedDescription)
+      }
+    })
+    task.resume()
+  }
     
     override func updateViewConstraints() {
         if !didSetupConstraints {

@@ -1,2 +1,5 @@
 github "PureLayout/PureLayout"
 github "ReactiveX/RxSwift" ~> 4.0
+github "Moya/Moya"
+github "tristanhimmelman/ObjectMapper" ~> 3.4
+github "pkluz/PKHUD" ~> 4.0

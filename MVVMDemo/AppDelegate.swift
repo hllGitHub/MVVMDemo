@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window?.rootViewController = LoginViewController()
-        return true
+      
+      window?.rootViewController = ChildNameViewController()
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

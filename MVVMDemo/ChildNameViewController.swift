@@ -94,11 +94,11 @@ class ChildNameViewController: AddChildBaseViewController {
             guard let self = self else {
                 return
             }
-            self.AddChildName()
+            self.addChildName()
         }).disposed(by: self.disposeBag)
     }
     
-    func AddChildName() {
+    func addChildName() {
         let alertController = UIAlertController.init(title: "Message", message: "Add child successfully", preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)

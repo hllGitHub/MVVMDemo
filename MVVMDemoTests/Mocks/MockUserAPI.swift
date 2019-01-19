@@ -28,5 +28,4 @@ class MockUserAPI: UserAPI {
     _usernameAvailable = usernameAvailable
     _loginIn = loginIn
   }
-  
 }

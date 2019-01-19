@@ -68,7 +68,7 @@ class UserDefaultAPI: UserAPI {
   
   func loginIn(username: String, password: String) -> Observable<Bool> {
     
-    let url = URL(string: "http://api.staging.kangyu.co/v3/session/")!
+    let url = URL(string: "https://api.kangyu.co/v3/session/")!
     let parameters = ["phone" : username, "password" : password, "locale" : "zh-CN", "city_id" : "4133"]
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
